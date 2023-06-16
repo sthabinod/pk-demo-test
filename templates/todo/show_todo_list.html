@@ -1,0 +1,29 @@
+{% extends '../base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+    <div class="list-group">
+        <h1>List of todos</h1>
+        {% for todo in  todos_key %}
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start ">
+
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">        {{todo.title}}            </h5>
+            <small>2023 Monday 10</small>
+          </div>
+          <a href="{% url 'delete_todo' todo.id %}">Delete</a>
+
+          <p class="mb-1">{{todo.description}}</p>
+
+        </a>
+    {% endfor %}
+      
+      
+      </div>
+    </div>
+</div>
+    
+  
+{% endblock content %}
